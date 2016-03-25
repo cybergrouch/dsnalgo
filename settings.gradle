@@ -1,3 +1,4 @@
 rootProject.name = 'dsnalgo'
 include 'algorithms'
+include 'utils'
 
