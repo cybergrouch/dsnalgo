@@ -11,6 +11,8 @@ import java.util.stream.IntStream;
  */
 public class LongestIncresingSubsequenceSizeAlgorithm {
 
+    static boolean isDebug = false;
+
     final int[] input;
 
     private LongestIncresingSubsequenceSizeAlgorithm(final int[] input) {
@@ -21,6 +23,29 @@ public class LongestIncresingSubsequenceSizeAlgorithm {
         return getSequenceSize(input.length);
     }
 
+    /**
+     * We build the list from the ground up by considering the input array elements sequentially one-by-one. Along
+     * the way, we try to construct a map where the values are subsequences of the original input
+     * mapped against its size.
+     *
+     * The base case is for L(1) (list of size 1) and for simplicity we just take the first element of the input.
+     *
+     * For the second loop, we try to derive L(2) from L(1) by considering the second element. If the second element is
+     * greater that L(1)'s last element, then we can easily append it to L(1) to derive L(2) which has just one more
+     * than the side of L(1) (or 2 to be precise). If the second element is lesser than L(1)'s last element, we derive a
+     * new L(1) replacing the last value with that of the second element.
+     *
+     * For the next elements, we just apply the same principle by trying to build on top of the previous sequence--i.e.,
+     * we are trying to derive L(n+1) from L(n). Again we apply 3 derivation flows:
+     * <ol>
+     *     <li>If the second element > last element of L(n), then L(n+1) = L(n) + second element</li>
+     *     <li>If the second elemnt < last element of L(n), then new L(n) = L(n) - last element + second element</li>
+     *     <li>If the seocnd element == last element of L(n), then we cannot derive L(n+1) from L(n)</li>
+     * </ol>
+     *
+     * @param sizeLimit
+     * @return
+     */
     public List<List<Integer>> getSequenceSize(int sizeLimit) {
 
         List<List<Integer>> longestSubsequences = Lists.newArrayList();
@@ -63,7 +88,9 @@ public class LongestIncresingSubsequenceSizeAlgorithm {
         IntStream.iterate(1, i -> i + 1).limit(input.length).forEach(i -> {
             List<List<Integer>> list = algo.getSequenceSize(i);
             List<Integer> lis = list.get(list.size() - 1);
-            System.out.println(String.format("i = %s [%s] : size = %s : %s", i, input[i - 1], lis.size(), StringUtils.listJoiner(lis)));
+            if (isDebug) {
+                System.out.println(String.format("i = %s [%s] : size = %s : %s", i, input[i - 1], lis.size(), StringUtils.listJoiner(lis)));
+            }
         });
 
         List<List<Integer>> list = algo.getSequenceSize();
