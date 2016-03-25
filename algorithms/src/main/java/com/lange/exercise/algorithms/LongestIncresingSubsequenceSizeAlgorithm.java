@@ -11,7 +11,6 @@ import java.util.stream.IntStream;
  */
 public class LongestIncresingSubsequenceSizeAlgorithm {
 
-    List<List<Integer>> longestSubsequences;
     final int[] input;
 
     private LongestIncresingSubsequenceSizeAlgorithm(final int[] input) {
@@ -24,7 +23,7 @@ public class LongestIncresingSubsequenceSizeAlgorithm {
 
     public List<List<Integer>> getSequenceSize(int sizeLimit) {
 
-        longestSubsequences = Lists.newArrayList();
+        List<List<Integer>> longestSubsequences = Lists.newArrayList();
         longestSubsequences.add(Lists.newArrayList(input[0]));
 
         int n = 1;
