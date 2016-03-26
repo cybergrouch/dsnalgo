@@ -1,7 +1,6 @@
-import com.lange.exercise.algorithms.LongestIncresingSubsequenceSizeDPAlgorithm;
+import com.lange.exercise.algorithms.LongestIncresingSubsequenceDPAlgorithm;
 import com.lange.exercise.utils.StringUtils;
 
-import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -22,9 +21,9 @@ public class LongestIncresingSubsequence {
                 input[i] = scanner.nextInt();
             }
 
-            List<Integer> solution = LongestIncresingSubsequenceSizeDPAlgorithm.solve(input);
+            int[] solution = LongestIncresingSubsequenceDPAlgorithm.solve(input);
 
-            System.out.println(String.format("input: [%s]\noutput: [%s]\n", StringUtils.arrJoiner(input), StringUtils.listJoiner(solution)));
+            System.out.println(String.format("input: [%s]\noutput: [%s]\n", StringUtils.arrJoiner(input), StringUtils.arrJoiner(solution)));
 
             totalCases--;
         }
