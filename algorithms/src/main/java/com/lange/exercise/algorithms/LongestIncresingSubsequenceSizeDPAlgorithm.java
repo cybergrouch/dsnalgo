@@ -9,13 +9,13 @@ import java.util.stream.IntStream;
 /**
  * Created by lange on 24/3/16.
  */
-public class LongestIncresingSubsequenceSizeAlgorithm {
+public class LongestIncresingSubsequenceSizeDPAlgorithm {
 
     static boolean isDebug = false;
 
     final int[] input;
 
-    private LongestIncresingSubsequenceSizeAlgorithm(final int[] input) {
+    private LongestIncresingSubsequenceSizeDPAlgorithm(final int[] input) {
         this.input = input;
     }
 
@@ -24,13 +24,20 @@ public class LongestIncresingSubsequenceSizeAlgorithm {
     }
 
     /**
-     * We build the list from the ground up by considering the input array elements sequentially one-by-one. Along
-     * the way, we try to construct a map where the values are subsequences of the original input
-     * mapped against its size.
+     * This algorithm employs Dynamic Programming to solve the Longest Increasing Subsequence problem. The problem is
+     * stated simply: Given a list of random integers, find the longest increasing subsequence (i.e., numbers should be
+     * increasing and should be within sequence but need not contiguous).
+     *
+     * For this Dynamic Programming approach, we build the list from the ground up by considering the input array
+     * elements sequentially one-by-one. Along the way, we try to construct a map where the values are subsequences of
+     * the original input mapped against its size.
+     *
+     * So there is an external loop that controls the iteration for building smaller subsequence to bigger subsequence.
+     * There's also an internal loop which iterates through the elements of the input list.
      *
      * The base case is for L(1) (list of size 1) and for simplicity we just take the first element of the input.
      *
-     * For the second loop, we try to derive L(2) from L(1) by considering the second element. If the second element is
+     * For the second external loop, we try to derive L(2) from L(1) by considering the second element. If the second element is
      * greater that L(1)'s last element, then we can easily append it to L(1) to derive L(2) which has just one more
      * than the side of L(1) (or 2 to be precise). If the second element is lesser than L(1)'s last element, we derive a
      * new L(1) replacing the last value with that of the second element.
@@ -78,12 +85,12 @@ public class LongestIncresingSubsequenceSizeAlgorithm {
         return longestSubsequences;
     }
 
-    public static LongestIncresingSubsequenceSizeAlgorithm createInstance(int... input) {
-        return new LongestIncresingSubsequenceSizeAlgorithm(input);
+    public static LongestIncresingSubsequenceSizeDPAlgorithm createInstance(int... input) {
+        return new LongestIncresingSubsequenceSizeDPAlgorithm(input);
     }
 
     public static List<Integer> solve(int[] input) {
-        LongestIncresingSubsequenceSizeAlgorithm algo = LongestIncresingSubsequenceSizeAlgorithm.createInstance(input);
+        LongestIncresingSubsequenceSizeDPAlgorithm algo = LongestIncresingSubsequenceSizeDPAlgorithm.createInstance(input);
 
         IntStream.iterate(1, i -> i + 1).limit(input.length).forEach(i -> {
             List<List<Integer>> list = algo.getSequenceSize(i);

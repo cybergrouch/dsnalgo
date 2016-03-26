@@ -11,18 +11,18 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * Created by lange on 25/3/16.
  */
-public class LongestIncresingSubsequenceSizeAlgorithmTest {
+public class LongestIncresingSubsequenceSizeDPAlgorithmTest {
 
     @Test
     public void testInstantiation() {
-        LongestIncresingSubsequenceSizeAlgorithm instance = LongestIncresingSubsequenceSizeAlgorithm.createInstance(1);
+        LongestIncresingSubsequenceSizeDPAlgorithm instance = LongestIncresingSubsequenceSizeDPAlgorithm.createInstance(1);
         assertThat(instance).isNotNull();
     }
 
     @Test
     public void testSolve() {
         int[] input = new int[] { 0, 8, 4, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15 };
-        List<Integer> output = LongestIncresingSubsequenceSizeAlgorithm.solve(input);
+        List<Integer> output = LongestIncresingSubsequenceSizeDPAlgorithm.solve(input);
         assertListElements(output, 0,4,6,9,11,15);
     }
 
@@ -211,7 +211,7 @@ public class LongestIncresingSubsequenceSizeAlgorithmTest {
 
     public List<List<Integer>> invokeForN(int n) {
         int[] input = new int[] { 0, 8, 4, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15 };
-        LongestIncresingSubsequenceSizeAlgorithm instance = LongestIncresingSubsequenceSizeAlgorithm.createInstance(input);
+        LongestIncresingSubsequenceSizeDPAlgorithm instance = LongestIncresingSubsequenceSizeDPAlgorithm.createInstance(input);
         List<List<Integer>> sequenceSize = instance.getSequenceSize(n);
         return sequenceSize;
     }
