@@ -64,13 +64,11 @@ public class LongestCommonSubsequenceDPAlgorithm implements LongestCommonSubsequ
 
         final Stack<Integer> stack = new Stack<>();
         final Pair<Integer, Integer> key = maximum.getKey();
-        final int maxLength = maximum.getValue();
 
-        int _maxLength = maxLength;
         int _i = key.getLeft() - 1;
         int _j = key.getRight() - 1;
 
-        while (_i > 0 || _j > 0) {
+        while (_i >= 0 && _j >= 0) {
 
             if (input1[_i] == input2[_j]) {
                 stack.push(input1[_i]);

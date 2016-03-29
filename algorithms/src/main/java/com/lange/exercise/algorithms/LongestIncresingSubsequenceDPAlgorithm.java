@@ -11,14 +11,26 @@ import static com.lange.exercise.utils.ArrayUtils.toIntArray;
 /**
  * Created by lange on 24/3/16.
  */
-public class LongestIncresingSubsequenceDPAlgorithm {
+public class LongestIncresingSubsequenceDPAlgorithm implements LongestIncresingSubsequenceAlgorithm {
 
     static boolean isDebug = false;
 
-    final int[] input;
+    private LongestIncresingSubsequenceDPAlgorithm() {
+        super();
+    }
 
-    private LongestIncresingSubsequenceDPAlgorithm(final int[] input) {
-        this.input = input;
+    public static LongestIncresingSubsequenceDPAlgorithm createInstance() {
+        return new LongestIncresingSubsequenceDPAlgorithm();
+    }
+
+    public static int[] solve(int[] input) {
+        LongestIncresingSubsequenceDPAlgorithm algo = LongestIncresingSubsequenceDPAlgorithm.createInstance();
+
+        int[] sequence = algo.getLIS(input);
+        if (isDebug) {
+            System.out.println(String.format("max size for sequence input is %s : [%s]", sequence.length, StringUtils.arrJoiner(sequence)));
+        }
+        return sequence;
     }
 
     /**
@@ -37,7 +49,8 @@ public class LongestIncresingSubsequenceDPAlgorithm {
      *
      * @return max sequence
      */
-    public int[] getLIS() {
+    @Override
+    public int[] getLIS(int[] input) {
         int n = input.length;
 
         // qStack[i] represents the longest subsequence size which ends with element input[i]
@@ -66,19 +79,5 @@ public class LongestIncresingSubsequenceDPAlgorithm {
 
         Stack<Integer> maxStack = Arrays.asList(qStack).stream().max(Comparator.comparingInt(Stack::size)).get();
         return toIntArray(maxStack);
-    }
-
-    public static LongestIncresingSubsequenceDPAlgorithm createInstance(int... input) {
-        return new LongestIncresingSubsequenceDPAlgorithm(input);
-    }
-
-    public static int[] solve(int[] input) {
-        LongestIncresingSubsequenceDPAlgorithm algo = LongestIncresingSubsequenceDPAlgorithm.createInstance(input);
-
-        int[] sequence = algo.getLIS();
-        if (isDebug) {
-            System.out.println(String.format("max size for sequence input is %s : [%s]", sequence.length, StringUtils.arrJoiner(sequence)));
-        }
-        return sequence;
     }
 }

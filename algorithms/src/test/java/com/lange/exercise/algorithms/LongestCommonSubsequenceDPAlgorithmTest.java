@@ -48,4 +48,14 @@ public class LongestCommonSubsequenceDPAlgorithmTest {
         assertListElements(output, 2, 3, 2, 10, 9, 8);
     }
 
+    @Test
+    public void testSolve4() {
+        int[] input1 = new int[] { 0, 1, 2, 3 };
+        int[] input2 = new int[] { 0, 2, 4, 3 };
+        LongestCommonSubsequenceDPAlgorithm instance = LongestCommonSubsequenceDPAlgorithm.createInstance();
+
+        int[] output = instance.getLCS(input1, input2);
+        assertListElements(output, 0, 2, 3);
+    }
+
 }
