@@ -29,7 +29,7 @@ public class LongestCommonSubsequence {
                 input2[i] = scanner.nextInt();
             }
 
-            int[] solution = LongestCommonSubsequenceRecursiveAlgorithm.createInstance().solve(input1, input2);
+            int[] solution = LongestCommonSubsequenceDPAlgorithm.createInstance().getLCS(input1, input2);
 
             System.out.println(String.format("input1: [%s]\ninput2: [%s]\noutput: [%s]\n",
                     StringUtils.arrJoiner(input1),

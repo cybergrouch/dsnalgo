@@ -22,7 +22,7 @@ public class LongestIncresingSubsequenceDPAlgorithm {
     }
 
     /**
-     * This algorithm employs Dynamic Programming to solve the Longest Increasing Subsequence problem. The problem is
+     * This algorithm employs Dynamic Programming to getLCS the Longest Increasing Subsequence problem. The problem is
      * stated simply: Given a list of random integers, find the longest increasing subsequence (i.e., numbers should be
      * increasing and should be within sequence but need not contiguous).
      *
