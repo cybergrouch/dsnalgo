@@ -1,3 +1,5 @@
+package com.lange.exercise.algorithms;
+
 import com.lange.exercise.algorithms.LongestIncresingSubsequenceDPAlgorithm;
 import com.lange.exercise.utils.StringUtils;
 

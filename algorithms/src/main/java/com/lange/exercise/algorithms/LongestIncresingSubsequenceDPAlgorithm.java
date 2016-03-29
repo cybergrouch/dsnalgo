@@ -6,6 +6,8 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Stack;
 
+import static com.lange.exercise.utils.ArrayUtils.toIntArray;
+
 /**
  * Created by lange on 24/3/16.
  */
@@ -63,13 +65,7 @@ public class LongestIncresingSubsequenceDPAlgorithm {
         }
 
         Stack<Integer> maxStack = Arrays.asList(qStack).stream().max(Comparator.comparingInt(Stack::size)).get();
-
-        int i = maxStack.size() - 1;
-        int[] sequence = new int[maxStack.size()];
-        while(!maxStack.isEmpty() && i >= 0) {
-            sequence[i--] = maxStack.pop();
-        }
-        return sequence;
+        return toIntArray(maxStack);
     }
 
     public static LongestIncresingSubsequenceDPAlgorithm createInstance(int... input) {
