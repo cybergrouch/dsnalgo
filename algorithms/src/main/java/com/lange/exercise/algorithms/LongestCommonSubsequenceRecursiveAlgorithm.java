@@ -1,15 +1,6 @@
 package com.lange.exercise.algorithms;
 
 import com.lange.exercise.utils.ArrayUtils;
-import org.apache.commons.lang3.tuple.Pair;
-
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Stack;
-import java.util.stream.IntStream;
-
-import static com.lange.exercise.utils.ArrayUtils.toIntArray;
 
 /**
  * Created by lange on 27/3/16.

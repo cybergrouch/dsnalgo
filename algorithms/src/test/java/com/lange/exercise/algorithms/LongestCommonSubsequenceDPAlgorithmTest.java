@@ -2,8 +2,8 @@ package com.lange.exercise.algorithms;
 
 import org.junit.Test;
 
+import static com.lange.exercise.utils.TestUtils.assertListElements;
 import static org.assertj.core.api.Assertions.assertThat;
-import static com.lange.exercise.utils.TestUtils.*;
 
 
 /**

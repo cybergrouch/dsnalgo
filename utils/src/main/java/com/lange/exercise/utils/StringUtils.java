@@ -1,8 +1,6 @@
 package com.lange.exercise.utils;
 
-import java.util.Arrays;
 import java.util.List;
-import java.util.function.IntUnaryOperator;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 

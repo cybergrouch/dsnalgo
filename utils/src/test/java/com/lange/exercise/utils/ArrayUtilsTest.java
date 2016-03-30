@@ -2,7 +2,6 @@ package com.lange.exercise.utils;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.Stack;
 
 import static org.assertj.core.api.Assertions.assertThat;
