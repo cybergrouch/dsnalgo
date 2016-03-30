@@ -39,10 +39,10 @@ public class LongestIncresingSubsequenceDPAlgorithm implements LongestIncresingS
      * increasing and should be within sequence but need not contiguous).
      *
      * We first build an array of stacks. Each <code>i</code>-th element in the array corresponds to the longest
-     * sequence where <code>input[i]</code> is the last element of the sequence. This is done by a nested loop where the
-     * external loop iterates through all the elements of <code>input</code> while the inner loop looks for the next
-     * longest sequence where <code>input[k]</code> could be appended (k being the index controlled by the external
-     * loop).
+     * sequence where the last element of the said sequence corresponds to <code>input[i]</code>). This is done by two
+     * nested loops where the external loop iterates through all the elements of <code>input</code> while the inner loop
+     * looks for the next longest sequence where <code>input[k]</code> could be appended (k being the index controlled
+     * by the external loop).
      *
      * After building the array of stack, the next step is to just find the stack with the most elements then converting
      * it back to an array.

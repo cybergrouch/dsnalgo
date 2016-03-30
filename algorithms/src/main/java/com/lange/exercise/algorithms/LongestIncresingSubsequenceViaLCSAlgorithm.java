@@ -29,6 +29,15 @@ public class LongestIncresingSubsequenceViaLCSAlgorithm implements LongestIncres
         return sequence;
     }
 
+    /**
+     * The insight is that since the output should be increasing then it is a subsequence of the sorted sequence of the
+     * input as well as a subsequence of the original input (the original ordering). Based on this, we can derive a
+     * sequence which is the Longest Increasing Subsequence of the input sequence by solving for the Longest Common
+     * Subsequence of the sorted input sequence and the original input sequence.
+     *
+     * @param input1 the original sequence
+     * @return the longest increasing subsequence based from the input sequence
+     */
     @Override
     public int[] getLIS(int[] input1) {
         int[] input2 = Arrays.copyOf(input1, input1.length);
