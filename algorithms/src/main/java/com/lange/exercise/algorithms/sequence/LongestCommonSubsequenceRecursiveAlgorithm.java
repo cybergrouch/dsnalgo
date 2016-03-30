@@ -1,4 +1,4 @@
-package com.lange.exercise.algorithms;
+package com.lange.exercise.algorithms.sequence;
 
 import com.lange.exercise.utils.ArrayUtils;
 

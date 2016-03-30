@@ -1,5 +1,6 @@
-package com.lange.exercise.algorithms;
+package com.lange.exercise.algorithms.sequence;
 
+import com.lange.exercise.algorithms.sequence.LongestIncresingSubsequenceDPAlgorithm;
 import org.junit.Test;
 
 import static com.lange.exercise.utils.TestUtils.assertListElements;

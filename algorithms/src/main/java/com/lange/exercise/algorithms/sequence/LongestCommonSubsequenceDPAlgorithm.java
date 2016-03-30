@@ -1,4 +1,4 @@
-package com.lange.exercise.algorithms;
+package com.lange.exercise.algorithms.sequence;
 
 import org.apache.commons.lang3.tuple.Pair;
 

@@ -1,4 +1,4 @@
-package com.lange.exercise.algorithms;
+package com.lange.exercise.algorithms.sequence;
 
 /**
  * Created by lange on 29/3/16.

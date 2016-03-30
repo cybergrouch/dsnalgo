@@ -1,5 +1,6 @@
-package com.lange.exercise.algorithms;
+package com.lange.exercise.algorithms.sequence;
 
+import com.lange.exercise.algorithms.sequence.LongestCommonSubsequenceDPAlgorithm;
 import com.lange.exercise.utils.StringUtils;
 
 import java.util.Scanner;
