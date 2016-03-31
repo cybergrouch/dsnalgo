@@ -1,4 +1,6 @@
 rootProject.name = 'dsnalgo'
-include 'algorithms'
+include 'algorithms_sequence'
 include 'utils'
+include 'algorithms_graph'
+include 'algorithms_sort'
 
